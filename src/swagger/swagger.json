@@ -1,0 +1,404 @@
+{
+    "openapi": "3.0.0",
+    "info" : {
+        "title": "Informar o nome da API / BFF ",
+        "description": "Descrever sobre o BFF e o vínculo com o frontend",
+        "termsOfService": "http://localhost:8099/terms",
+        "contact": {
+            "email": "teste@123milhas.com.br"
+        },
+        "version": "1.0.0"
+    },
+    "servers" :[
+        {
+            "url": "http://localhost:8099/v1",
+            "description": "API/BFF Teste ......"
+        },
+        {
+            "url": "http://localhost:8099/v2",
+            "description": "API/BFF Teste ......"
+        }
+    ],
+    "paths" : {
+        "/rota1_post" : {
+            "post" : {
+                "summary": "Nome da rota",
+                "description": "Descrever o objetivo da rota",
+                "tags": ["Nome do Agrupamento dos Endpoints"],
+                "security": [{"bearerAuth":[]}],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Component1"
+                            },
+                            "examples": {
+                                "Component1": {
+                                    "value" : {
+                                        "field1": "Colocar um exemplo para este campo",
+                                        "field2": "Colocar um exemplo para este campo",
+                                        "field3": 100,
+                                        "field4": "Colocar um exemplo para este campo"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "400": {
+                        "description": "Apresentar a descrição desta resposta"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Component1"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rota2_get" : {
+            "get": {
+                "summary": "Nome da rota",
+                "description": "Descrever o objetivo da rota",
+                "tags": ["Nome do Agrupamento dos Endpoints"],
+                "security": [{"bearerAuth":[]}],
+                "parameters": [
+                    {
+                        "name": "nameparameter",
+                        "in": "query",
+                        "description": "Descrição explicando o parâmetro",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Component2"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rota3_get/{id}" : {
+            "get": {
+                "summary": "Nome da rota",
+                "description": "Descrever o objetivo da rota",
+                "tags": ["Nome do Agrupamento dos Endpoints"],
+                "security": [{"bearerAuth":[]}],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Descrição explicando o parâmetro",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Component3"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "summary": "Nome da rota",
+                "description": "Descrever o objetivo da rota",
+                "tags": ["Nome do Agrupamento dos Endpoints"],
+                "security": [{"bearerAuth":[]}],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Descrição explicando o parâmetro",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Component1"
+                            },
+                            "examples": {
+                                "Component1": {
+                                    "value" : {
+                                        "field1": "Colocar um exemplo para este campo",
+                                        "field2": "Colocar um exemplo para este campo",
+                                        "field3": 100,
+                                        "field4": "Colocar um exemplo para este campo"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "400": {
+                        "description": "Apresentar a descrição desta resposta"
+                    },
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/Component1"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/exemple-one/index" : {
+            "get": {
+                "summary": "Exemplo de um retorno de rota",
+                "description": "Apresentar o exemplo de um retorno de uma rota",
+                "tags": ["Exemplo"],
+                "parameters": [
+                ],
+                "security": [{"bearerAuth":[]}],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/ResponseExemploOne"
+                                },
+                                "examples": {
+                                    "ResponseExemploOne": {
+                                        "value" : {
+                                            "success": true,
+                                            "data": {
+                                                "responseBackend" : "Este campo será substituído pelo retorno do Backend"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro no processamento do endpont",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/ResponseExemploError"
+                                },
+                                "examples": {
+                                    "ResponseExemploError": {
+                                        "value" : {
+                                            "success": false,
+                                            "message": "Mensagem a ser apresentada para o usuário",
+                                            "error": "Mensagem retornada do Backend/Ou da captura do try/catch"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/exemple-one-error/index" : {
+            "get": {
+                "summary": "Exemplo de um retorno de rota com erro",
+                "description": "Apresentar o exemplo de um retorno de uma rota com erro",
+                "tags": ["Exemplo"],
+                "parameters": [
+                ],
+                "security": [{"bearerAuth":[]}],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/ResponseExemploOne"
+                                },
+                                "examples": {
+                                    "ResponseExemploOne": {
+                                        "value" : {
+                                            "success": true,
+                                            "data": {
+                                                "responseBackend" : "Este campo será substituído pelo retorno do Backend"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro no processamento do endpont",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "$ref": "#/components/schemas/ResponseExemploError"
+                                },
+                                "examples": {
+                                    "ResponseExemploError": {
+                                        "value" : {
+                                            "success": false,
+                                            "message": "Mensagem a ser apresentada para o usuário",
+                                            "error": "Mensagem retornada do Backend/Ou da captura do try/catch"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Component1": {
+                "type": "object",
+                "properties": {
+                    "field1": {
+                        "type": "string"
+                    },
+                    "field2": {
+                        "type": "string"
+                    },
+                    "field3": {
+                        "type": "number"
+                    },
+                    "field4": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Component2": {
+                "type": "object",
+                "properties": {
+                    "field1": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "field1": {
+                                    "type": "string"
+                                },
+                                "field2": {
+                                    "type": "string"
+                                },
+                                "field3": {
+                                    "type": "number"
+                                },
+                                "field4": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "field2": {
+                        "type": "string"
+                    },
+                    "field3": {
+                        "type": "number"
+                    },
+                    "field4": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Component3": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "field1": {
+                            "type": "string"
+                        },
+                        "field2": {
+                            "type": "string"
+                        },
+                        "field3": {
+                            "type": "number"
+                        },
+                        "field4": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "ResponseExemploOne": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean"
+                    },
+                    "data": {
+                        "type": "object",
+                        "properties": {
+                            "responseBackend" : {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            },
+            "ResponseExemploError": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "type": "boolean"
+                    },
+                    "message": {
+                        "type": "string"
+                    },
+                    "error": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        }
+    }
+}

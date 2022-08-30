@@ -1,0 +1,23 @@
+docker images
+docker rmi bff_template
+
+docker build -t bff_template .
+
+docker run -p 8099:8099 --name bff_template_container -d bff_template
+
+docker ps
+docker stop ID
+docker start ID
+docker logs ID
+docker rm ID
+
+docker ps -f name=bff_template_container
+
+docker container exec -it bff_template_container sh
+
+pm2 list
+
+RUN apk add lsof
+apk add lsof
+lsof -i tcp:3000
+kill -3000 PID

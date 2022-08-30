@@ -1,0 +1,14 @@
+{
+    "apps": [
+        {
+            "name": "TemplateBFF",
+            "exec_mode": "fork",
+            "instances": "1",
+            "script": "npx tsc",
+            "interpreter": "ts-node",
+            "env": {
+                "PORT": 8099
+            }
+        }
+    ]
+}

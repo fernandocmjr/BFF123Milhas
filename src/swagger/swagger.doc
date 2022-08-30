@@ -1,0 +1,6 @@
+https://swagger.io/
+https://www.npmjs.com/package/swagger-ui-express
+https://swagger.io/docs/specification/2-0/adding-examples/
+
+yarn add swagger-ui-express
+yarn add @types/swagger-ui-express -D
