@@ -6,7 +6,7 @@ export const getMethod = async (req: Request, res: Response) => {
   try {
     axios({
       method: 'GET',
-      url: 'http://172.20.0.1:1234/api/v3.1/loyalty/dashboard/filters',
+      url: 'http://172.22.0.1:1234/api/v3.1/loyalty/dashboard/filters',
       headers: {
         'Content-type': 'application/json;charset=UTF=8',
         'Access-control-Allow-Origin': '*',

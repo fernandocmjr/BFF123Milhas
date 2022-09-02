@@ -10,7 +10,7 @@ const router = express.Router();
 router.use(termsRouter);
 router.use(generateTokenRouter);
 
-router.use(authorizeJWT);
+//router.use(authorizeJWT);
 router.use(exempleOneRouter);
 router.use(exempleConsumerAPIRouter);
 
